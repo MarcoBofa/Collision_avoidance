@@ -85,6 +85,7 @@ roslaunch ur5e_gripper_moveit_config ur5e_gazebo.launch
 Che avvia gazebo ( nel quale purtroppo sarà presente solo il robot perchè i modelli (tavolo, ostacoli etc.) vengono salvati in locale in .gazebo, anche se rappresenta solo un aspetto di visualizzazione visto che i controlli delle collisioni e degli ostacoli avvengono su Rviz). 
 Viene avviato inoltre Rviz in cui dovrebbe subito dopo comparire il tavolo di laboratorio, mentre il robot dovrebbe iniziare il movimento verso la posizione di "riposo".
 <br/>
+<br/>
 
 - Nella seconda finestra eseguire il comando:
 ```
@@ -92,6 +93,7 @@ roslaunch collision_avoidance collion_av.launch
 ```
 
 Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di test selezionato (quello scommentato come descritto nella parte precedente), inserito il numero la simulazione comincerà e il robot inizierà a muoversi. 
+<br/>
 <br/>
 
 Se dovesse succedere che il programma dia errori o si blocchi (non dovrebbe ma con tutti i requisiti di installazione necessari non si sa mai) usare Ctrl^c per fermare la simulazione e riavviarla con i comandi mostrati.
