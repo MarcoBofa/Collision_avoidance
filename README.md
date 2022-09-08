@@ -20,7 +20,7 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 <br/>
 
 1. Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu) .
-2. Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in [MoveIt Installation](https://ros planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire il comando:
+2. Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in [MoveIt Installation](https://rosplanning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire il comando:
 
 ```
 catkin_make    
