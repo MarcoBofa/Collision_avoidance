@@ -36,7 +36,7 @@ INVECE DI  **catkin build**
 <br/>
 
 
-3. Una volta creato e compilato il workspace il prossimo step è da svolgere è quello di copiare le 3 cartelle 
+3. Una volta creato e compilato il workspace il prossimo step da svolgere è quello di copiare le 3 cartelle 
 > soft_robotics -
 > collision_avoidance -
 > fmauch_universal_robot
