@@ -1,0 +1,200 @@
+\hypertarget{move__obstacle__case2_8cpp}{}\doxysection{move\+\_\+obstacle\+\_\+case2.\+cpp File Reference}
+\label{move__obstacle__case2_8cpp}\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+
+
+ROS node that moves case2 obstacles when signaled by \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp}{algoritmo\+\_\+prevenzione\+\_\+collisioni.\+cpp}}.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$moveit/move\+\_\+group\+\_\+interface/move\+\_\+group\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+geometry\+\_\+msgs/tf2\+\_\+geometry\+\_\+msgs.\+h$>$}\newline
+{\ttfamily \#include $<$tf2/\+Linear\+Math/\+Quaternion.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+scene\+\_\+interface/planning\+\_\+scene\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Collision\+Object.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shapes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/mesh\+\_\+operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shape\+\_\+operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gazebo\+\_\+msgs/\+Model\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gazebo\+\_\+msgs/\+Set\+Model\+State.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}std\+\_\+msgs/\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+Include dependency graph for move\+\_\+obstacle\+\_\+case2.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{move__obstacle__case2_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_ac58ca94895dc6bdf98e174287e53bb55}{remove\+\_\+collision\+\_\+objects}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Function to Remove the collision objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_acd93f02a2dd8b92630be202057148192}{publish\+\_\+model\+\_\+pose}} (ros\+::\+Node\+Handle n, std\+::vector$<$ double $>$ \&obj\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Function that moves the gazebo obstacle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_a9da710bc3302200d3b92b76a17d9e0cb}{move\+\_\+collision\+\_\+objects}} (ros\+::\+Node\+Handle n, std\+::vector$<$ double $>$ \&obj\+\_\+pos, std\+::string id)
+\begin{DoxyCompactList}\small\item\em Function that moves the collision object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_af57d97640191aabcda0562a98f0593f0}{add\+\_\+collision\+\_\+obj}} ()
+\begin{DoxyCompactList}\small\item\em Function that adds collision objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_a05fb911e42ee21b9f019e2d32d62ad27}{wait\+\_\+for\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Function that wait for the message to stop the collision object motion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{move__obstacle__case2_8cpp_a065ab43885faa6e1f877be75684d92f6}{wait\+\_\+for\+\_\+message}} (ros\+::\+Node\+Handle n)
+\begin{DoxyCompactList}\small\item\em Function that wait for the message to start the collision object motion. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{move__obstacle__case2_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Main Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{move__obstacle__case2_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}{PLANNING\+\_\+\+GROUP\+\_\+\+ARM}} = \char`\"{}manipulator\char`\"{}
+\begin{DoxyCompactList}\small\item\em Define moveit group name \mbox{[}Arm\mbox{]}. \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Planning\+Scene\+Interface $\ast$ \mbox{\hyperlink{move__obstacle__case2_8cpp_ad24eadc8a511670e7b52193da87cafd8}{planning\+\_\+scene\+\_\+interface}}
+\begin{DoxyCompactList}\small\item\em Pointer to the planning scene. \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface $\ast$ \mbox{\hyperlink{move__obstacle__case2_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}{move\+\_\+group\+\_\+arm}}
+\begin{DoxyCompactList}\small\item\em pointer to the arm move group \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{move__obstacle__case2_8cpp_a44992affb21ddb63e4e7f0cc0090aca3}{move}} = true
+\begin{DoxyCompactList}\small\item\em Booloean value that control the object motion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ROS node that moves case2 obstacles when signaled by \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp}{algoritmo\+\_\+prevenzione\+\_\+collisioni.\+cpp}}. 
+
+\begin{DoxyAuthor}{Author}
+Bonafini Marco 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_af57d97640191aabcda0562a98f0593f0}\label{move__obstacle__case2_8cpp_af57d97640191aabcda0562a98f0593f0}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!add\_collision\_obj@{add\_collision\_obj}}
+\index{add\_collision\_obj@{add\_collision\_obj}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{add\_collision\_obj()}{add\_collision\_obj()}}
+{\footnotesize\ttfamily void add\+\_\+collision\+\_\+obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function that adds collision objects. 
+
+The function adds all the collision objects representing a human \mbox{\Hypertarget{move__obstacle__case2_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}\label{move__obstacle__case2_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!main@{main}}
+\index{main@{main}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Main Function. 
+
+It initializes the ROS node, moves the robot to rest pose and starts the subscriber for the obstacle motion \mbox{\Hypertarget{move__obstacle__case2_8cpp_a9da710bc3302200d3b92b76a17d9e0cb}\label{move__obstacle__case2_8cpp_a9da710bc3302200d3b92b76a17d9e0cb}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!move\_collision\_objects@{move\_collision\_objects}}
+\index{move\_collision\_objects@{move\_collision\_objects}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_collision\_objects()}{move\_collision\_objects()}}
+{\footnotesize\ttfamily void move\+\_\+collision\+\_\+objects (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle}]{n,  }\item[{std\+::vector$<$ double $>$ \&}]{obj\+\_\+pos,  }\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Function that moves the collision object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj\+\_\+pos} & vector containing the new object position and orientation \\
+\hline
+{\em id} & ID of the collision object to move \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_acd93f02a2dd8b92630be202057148192}\label{move__obstacle__case2_8cpp_acd93f02a2dd8b92630be202057148192}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!publish\_model\_pose@{publish\_model\_pose}}
+\index{publish\_model\_pose@{publish\_model\_pose}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{publish\_model\_pose()}{publish\_model\_pose()}}
+{\footnotesize\ttfamily void publish\+\_\+model\+\_\+pose (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle}]{n,  }\item[{std\+::vector$<$ double $>$ \&}]{obj\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Function that moves the gazebo obstacle. 
+
+The gazebo model of the obstacle is moved by publishing a new pose 
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+handle} & Main mechanism to interact with the ROS system. It\textquotesingle{}s used to register the program as a node with the ROS master \\
+\hline
+{\em obj\+\_\+pos} & vector containing the new object position and orientation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_ac58ca94895dc6bdf98e174287e53bb55}\label{move__obstacle__case2_8cpp_ac58ca94895dc6bdf98e174287e53bb55}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!remove\_collision\_objects@{remove\_collision\_objects}}
+\index{remove\_collision\_objects@{remove\_collision\_objects}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{remove\_collision\_objects()}{remove\_collision\_objects()}}
+{\footnotesize\ttfamily void remove\+\_\+collision\+\_\+objects (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Function to Remove the collision objects. 
+
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_a065ab43885faa6e1f877be75684d92f6}\label{move__obstacle__case2_8cpp_a065ab43885faa6e1f877be75684d92f6}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!wait\_for\_message@{wait\_for\_message}}
+\index{wait\_for\_message@{wait\_for\_message}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_message()}{wait\_for\_message()}}
+{\footnotesize\ttfamily void wait\+\_\+for\+\_\+message (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle}]{n }\end{DoxyParamCaption})}
+
+
+
+Function that wait for the message to start the collision object motion. 
+
+The function subscribe to the topic where the collision avoidance node will publish the message to start the collision object motion \mbox{\Hypertarget{move__obstacle__case2_8cpp_a05fb911e42ee21b9f019e2d32d62ad27}\label{move__obstacle__case2_8cpp_a05fb911e42ee21b9f019e2d32d62ad27}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!wait\_for\_stop@{wait\_for\_stop}}
+\index{wait\_for\_stop@{wait\_for\_stop}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_stop()}{wait\_for\_stop()}}
+{\footnotesize\ttfamily void wait\+\_\+for\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function that wait for the message to stop the collision object motion. 
+
+The function subscribe to the topic where the collision avoidance node will publish the message to stop the collision object motion 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_a44992affb21ddb63e4e7f0cc0090aca3}\label{move__obstacle__case2_8cpp_a44992affb21ddb63e4e7f0cc0090aca3}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!move@{move}}
+\index{move@{move}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily bool move = true}
+
+
+
+Booloean value that control the object motion. 
+
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}\label{move__obstacle__case2_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!move\_group\_arm@{move\_group\_arm}}
+\index{move\_group\_arm@{move\_group\_arm}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_group\_arm}{move\_group\_arm}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface$\ast$ move\+\_\+group\+\_\+arm}
+
+
+
+pointer to the arm move group 
+
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}\label{move__obstacle__case2_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}}
+\index{PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{PLANNING\_GROUP\_ARM}{PLANNING\_GROUP\_ARM}}
+{\footnotesize\ttfamily const std\+::string PLANNING\+\_\+\+GROUP\+\_\+\+ARM = \char`\"{}manipulator\char`\"{}}
+
+
+
+Define moveit group name \mbox{[}Arm\mbox{]}. 
+
+\mbox{\Hypertarget{move__obstacle__case2_8cpp_ad24eadc8a511670e7b52193da87cafd8}\label{move__obstacle__case2_8cpp_ad24eadc8a511670e7b52193da87cafd8}} 
+\index{move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}!planning\_scene\_interface@{planning\_scene\_interface}}
+\index{planning\_scene\_interface@{planning\_scene\_interface}!move\_obstacle\_case2.cpp@{move\_obstacle\_case2.cpp}}
+\doxysubsubsection{\texorpdfstring{planning\_scene\_interface}{planning\_scene\_interface}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Planning\+Scene\+Interface$\ast$ planning\+\_\+scene\+\_\+interface}
+
+
+
+Pointer to the planning scene. 
+

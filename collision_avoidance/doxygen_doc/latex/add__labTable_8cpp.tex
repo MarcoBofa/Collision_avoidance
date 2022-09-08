@@ -1,0 +1,122 @@
+\hypertarget{add__labTable_8cpp}{}\doxysection{add\+\_\+lab\+Table.\+cpp File Reference}
+\label{add__labTable_8cpp}\index{add\_labTable.cpp@{add\_labTable.cpp}}
+
+
+ROS node that adds the laboratory\textquotesingle{}s table as collision object.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$moveit/move\+\_\+group\+\_\+interface/move\+\_\+group\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+geometry\+\_\+msgs/tf2\+\_\+geometry\+\_\+msgs.\+h$>$}\newline
+{\ttfamily \#include $<$tf2/\+Linear\+Math/\+Quaternion.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+scene\+\_\+interface/planning\+\_\+scene\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Collision\+Object.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shapes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/mesh\+\_\+operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shape\+\_\+operations.\+h\char`\"{}}\newline
+Include dependency graph for add\+\_\+lab\+Table.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{add__labTable_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{add__labTable_8cpp_af57d97640191aabcda0562a98f0593f0}{add\+\_\+collision\+\_\+obj}} ()
+\begin{DoxyCompactList}\small\item\em Function to add collision objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{add__labTable_8cpp_a3d30e7fbdb1d0283b4ec80b12b49844a}{remove\+\_\+collision\+\_\+obj}} (int sig)
+\begin{DoxyCompactList}\small\item\em Function to Remove the collision objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{add__labTable_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Main Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{add__labTable_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}{PLANNING\+\_\+\+GROUP\+\_\+\+ARM}} = \char`\"{}manipulator\char`\"{}
+\begin{DoxyCompactList}\small\item\em Define moveit group name \mbox{[}Arm\mbox{]}. \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Planning\+Scene\+Interface $\ast$ \mbox{\hyperlink{add__labTable_8cpp_ad24eadc8a511670e7b52193da87cafd8}{planning\+\_\+scene\+\_\+interface}}
+\begin{DoxyCompactList}\small\item\em Pointer to the planning scene. \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface $\ast$ \mbox{\hyperlink{add__labTable_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}{move\+\_\+group\+\_\+arm}}
+\begin{DoxyCompactList}\small\item\em pointer to the arm move group \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ROS node that adds the laboratory\textquotesingle{}s table as collision object. 
+
+\begin{DoxyAuthor}{Author}
+Bonafini Marco 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{add__labTable_8cpp_af57d97640191aabcda0562a98f0593f0}\label{add__labTable_8cpp_af57d97640191aabcda0562a98f0593f0}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!add\_collision\_obj@{add\_collision\_obj}}
+\index{add\_collision\_obj@{add\_collision\_obj}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{add\_collision\_obj()}{add\_collision\_obj()}}
+{\footnotesize\ttfamily void add\+\_\+collision\+\_\+obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to add collision objects. 
+
+The function extract the mesh of the Lab\+Table and adds it to the scene \mbox{\Hypertarget{add__labTable_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}\label{add__labTable_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!main@{main}}
+\index{main@{main}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Main Function. 
+
+It initializes the ROS node, moves the robot to rest pose and adds the Laboratory table as collision object \mbox{\Hypertarget{add__labTable_8cpp_a3d30e7fbdb1d0283b4ec80b12b49844a}\label{add__labTable_8cpp_a3d30e7fbdb1d0283b4ec80b12b49844a}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!remove\_collision\_obj@{remove\_collision\_obj}}
+\index{remove\_collision\_obj@{remove\_collision\_obj}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{remove\_collision\_obj()}{remove\_collision\_obj()}}
+{\footnotesize\ttfamily void remove\+\_\+collision\+\_\+obj (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+
+
+Function to Remove the collision objects. 
+
+When the node is terminated the collision objects are removed from the scene 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{add__labTable_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}\label{add__labTable_8cpp_ad3623fda95a5f26ec6a3c13ff1846bae}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!move\_group\_arm@{move\_group\_arm}}
+\index{move\_group\_arm@{move\_group\_arm}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_group\_arm}{move\_group\_arm}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface$\ast$ move\+\_\+group\+\_\+arm}
+
+
+
+pointer to the arm move group 
+
+\mbox{\Hypertarget{add__labTable_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}\label{add__labTable_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}}
+\index{PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{PLANNING\_GROUP\_ARM}{PLANNING\_GROUP\_ARM}}
+{\footnotesize\ttfamily const std\+::string PLANNING\+\_\+\+GROUP\+\_\+\+ARM = \char`\"{}manipulator\char`\"{}}
+
+
+
+Define moveit group name \mbox{[}Arm\mbox{]}. 
+
+\mbox{\Hypertarget{add__labTable_8cpp_ad24eadc8a511670e7b52193da87cafd8}\label{add__labTable_8cpp_ad24eadc8a511670e7b52193da87cafd8}} 
+\index{add\_labTable.cpp@{add\_labTable.cpp}!planning\_scene\_interface@{planning\_scene\_interface}}
+\index{planning\_scene\_interface@{planning\_scene\_interface}!add\_labTable.cpp@{add\_labTable.cpp}}
+\doxysubsubsection{\texorpdfstring{planning\_scene\_interface}{planning\_scene\_interface}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Planning\+Scene\+Interface$\ast$ planning\+\_\+scene\+\_\+interface}
+
+
+
+Pointer to the planning scene. 
+

@@ -1,0 +1,372 @@
+\hypertarget{algoritmo__prevenzione__collisioni_8cpp}{}\doxysection{algoritmo\+\_\+prevenzione\+\_\+collisioni.\+cpp File Reference}
+\label{algoritmo__prevenzione__collisioni_8cpp}\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+
+
+The algoirthm moves the robot from a starting position to a goal position, the trajectory executed during the motion is constantly modified in order to avoid collision with the changing environment.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$moveit/move\+\_\+group\+\_\+interface/move\+\_\+group\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+geometry\+\_\+msgs/tf2\+\_\+geometry\+\_\+msgs.\+h$>$}\newline
+{\ttfamily \#include $<$tf2/\+Linear\+Math/\+Quaternion.\+h$>$}\newline
+{\ttfamily \#include $<$tf/transform\+\_\+listener.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+String.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+srvs/\+Trigger.\+h$>$}\newline
+{\ttfamily \#include $<$pluginlib/class\+\_\+loader.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}gazebo\+\_\+msgs/\+Model\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$gazebo\+\_\+msgs/\+Set\+Model\+State.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/robot\+\_\+state/conversions.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+pipeline/planning\+\_\+pipeline.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Planning\+Scene.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/robot\+\_\+model/robot\+\_\+model.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/robot\+\_\+state/robot\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/robot\+\_\+model\+\_\+loader/robot\+\_\+model\+\_\+loader.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+scene/planning\+\_\+scene.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+scene\+\_\+interface/planning\+\_\+scene\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+scene\+\_\+monitor/planning\+\_\+scene\+\_\+monitor.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/planning\+\_\+interface/planning\+\_\+interface.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/trajectory\+\_\+processing/iterative\+\_\+time\+\_\+parameterization.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Display\+Robot\+State.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Display\+Trajectory.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Attached\+Collision\+Object.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+msgs/\+Collision\+Object.\+h$>$}\newline
+{\ttfamily \#include $<$moveit/kinematic\+\_\+constraints/utils.\+h$>$}\newline
+{\ttfamily \#include $<$moveit\+\_\+visual\+\_\+tools/moveit\+\_\+visual\+\_\+tools.\+h$>$}\newline
+{\ttfamily \#include $<$rviz\+\_\+visual\+\_\+tools/rviz\+\_\+visual\+\_\+tools.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shapes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/mesh\+\_\+operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometric\+\_\+shapes/shape\+\_\+operations.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for algoritmo\+\_\+prevenzione\+\_\+collisioni.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{algoritmo__prevenzione__collisioni_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aa22275fc0348281127e4554cf54b20f8}{publish}} (ros\+::\+Node\+Handle n, std\+::string topic, int num)
+\begin{DoxyCompactList}\small\item\em Function to publish messages to the specified topic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a8197c84abd3032cb00669567be02a797}{print\+\_\+links\+\_\+value}} (const moveit\+::core\+::\+Joint\+Model\+Group $\ast$joint\+\_\+model\+\_\+group, moveit\+::core\+::\+Robot\+State \&robot\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Function to print the name of the joints with the corrisponing angles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a15cfff432549faded61ccad4dbe8d7b6}{intantiate\+\_\+classes}} ()
+\begin{DoxyCompactList}\small\item\em Function to instantiate all the classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a7f54a87624d6c731d917fd489ce9c21a}{move\+\_\+to\+\_\+start}} (ros\+::\+Node\+Handle \&node\+\_\+handle)
+\begin{DoxyCompactList}\small\item\em Function to move the robot to the starting position. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a514ffc33d25019bd6ab8433554633074}{select\+\_\+num\+\_\+configurations}} (int waypoint\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Function used to select the number of configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aa4a0cddd9a43919327242d28de187fee}{plan\+\_\+and\+\_\+move}} (ros\+::\+Node\+Handle \&node\+\_\+handle, std\+::vector$<$ double $>$ \&pos, bool test)
+\begin{DoxyCompactList}\small\item\em Function for dynamic collision avoidance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em Main Function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_ad7bfa43cafe8e167ff7968fab8a6d0fa}{home\+\_\+pos\+\_\+x}} = 0.\+5
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a1f40f8f0cb25be2f889754a10d82ecd1}{home\+\_\+pos\+\_\+y}} = 0.\+3
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aa87a83660e85a5e380010d72d4de6aeb}{home\+\_\+pos\+\_\+z}} = 0.\+87
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_abf4ee9401c5cf1f6b40d969c983302a6}{orientation\+\_\+w}} = 0.\+0001
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_ab73db7442fe816acb7163afbffacd796}{orientation\+\_\+x}} = 0.\+0
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a9d4604a1b64e201f5617d13e90867339}{orientation\+\_\+y}} = 0.\+0
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_abad9428aad916c4adb7a5c9dcd0dffc9}{orientation\+\_\+z}} = -\/1
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_af30bdcf895e64063b3d6c1bac1141ad7}{start\+\_\+planning\+\_\+time}} = 0.\+15
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aaba0b4d344c0f4f1ff9fa2b5ca75e116}{robot\+\_\+accellerations}} = 0.\+18
+\item 
+const double \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a628d801d093e5d9b41ecaa82592ee92d}{tolerance}} = 0.\+05
+\begin{DoxyCompactList}\small\item\em Goal pose tolerance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aa5c64be1d905b455d8330243e5c1804c}{test\+\_\+num}}
+\item 
+const std\+::string \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}{PLANNING\+\_\+\+GROUP\+\_\+\+ARM}} = \char`\"{}manipulator\char`\"{}
+\begin{DoxyCompactList}\small\item\em Define moveit group name \mbox{[}Arm\mbox{]}. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a40ed76b84f7fb79a07b725b43e0c73f2}{PLANNING\+\_\+\+GROUP\+\_\+\+GRIPPER}} = \char`\"{}endeffector\char`\"{}
+\begin{DoxyCompactList}\small\item\em Define moveit group name \mbox{[}End-\/\+Effector\mbox{]}. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_aadb4a5092d2de5ea3a01d642559c512a}{PLANNER}} = \char`\"{}RRTstar\char`\"{}
+\begin{DoxyCompactList}\small\item\em Name of the planner that will be used. \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface $\ast$ \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a9235c4a0ace90c9f9330a17e62ae128c}{arm\+\_\+move\+\_\+group}}
+\begin{DoxyCompactList}\small\item\em pointer to the arm move group \end{DoxyCompactList}\item 
+moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface $\ast$ \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a3be7f66194c2acdc26a14c6210b5ba05}{gripper\+\_\+move\+\_\+group}}
+\begin{DoxyCompactList}\small\item\em pointer to the gripper move group \end{DoxyCompactList}\item 
+planning\+\_\+scene\+\_\+monitor\+::\+Planning\+Scene\+Monitor\+Ptr \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_ae1498683c0741dd54290a067e3855d16}{psm}}
+\begin{DoxyCompactList}\small\item\em Planning Scene monitor that will create the planning scene. \end{DoxyCompactList}\item 
+robot\+\_\+model\+\_\+loader\+::\+Robot\+Model\+Loader $\ast$ \mbox{\hyperlink{algoritmo__prevenzione__collisioni_8cpp_a4a17daac43a74229694494db6c7cae83}{robot\+\_\+model\+\_\+load}}
+\begin{DoxyCompactList}\small\item\em Robot\+Model\+Loader\+: \href{http://docs.ros.org/noetic/api/moveit_ros_planning/html/classrobot__model__loader_1_1RobotModelLoader.html}{\texttt{ http\+://docs.\+ros.\+org/noetic/api/moveit\+\_\+ros\+\_\+planning/html/classrobot\+\_\+\+\_\+model\+\_\+\+\_\+loader\+\_\+1\+\_\+1\+Robot\+Model\+Loader.\+html}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The algoirthm moves the robot from a starting position to a goal position, the trajectory executed during the motion is constantly modified in order to avoid collision with the changing environment. 
+
+\begin{DoxyAuthor}{Author}
+Bonafini Marco 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a15cfff432549faded61ccad4dbe8d7b6}\label{algoritmo__prevenzione__collisioni_8cpp_a15cfff432549faded61ccad4dbe8d7b6}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!intantiate\_classes@{intantiate\_classes}}
+\index{intantiate\_classes@{intantiate\_classes}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{intantiate\_classes()}{intantiate\_classes()}}
+{\footnotesize\ttfamily void intantiate\+\_\+classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to instantiate all the classes. 
+
+The move group for the arm, the Robot Model Loader and the Planning Scene Monitor \mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}\label{algoritmo__prevenzione__collisioni_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!main@{main}}
+\index{main@{main}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Main Function. 
+
+It initializes the ROS node and asks the user for the test to execute \mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a7f54a87624d6c731d917fd489ce9c21a}\label{algoritmo__prevenzione__collisioni_8cpp_a7f54a87624d6c731d917fd489ce9c21a}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!move\_to\_start@{move\_to\_start}}
+\index{move\_to\_start@{move\_to\_start}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{move\_to\_start()}{move\_to\_start()}}
+{\footnotesize\ttfamily void move\+\_\+to\+\_\+start (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{node\+\_\+handle }\end{DoxyParamCaption})}
+
+
+
+Function to move the robot to the starting position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+handle} & Main mechanism to interact with the ROS system. It\textquotesingle{}s used to register the program as a node with the ROS master \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aa4a0cddd9a43919327242d28de187fee}\label{algoritmo__prevenzione__collisioni_8cpp_aa4a0cddd9a43919327242d28de187fee}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!plan\_and\_move@{plan\_and\_move}}
+\index{plan\_and\_move@{plan\_and\_move}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{plan\_and\_move()}{plan\_and\_move()}}
+{\footnotesize\ttfamily void plan\+\_\+and\+\_\+move (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{node\+\_\+handle,  }\item[{std\+::vector$<$ double $>$ \&}]{pos,  }\item[{bool}]{test }\end{DoxyParamCaption})}
+
+
+
+Function for dynamic collision avoidance. 
+
+The function performs an iterations loop for all the duration of the motion, at each step it calculates a new trajectory (if the previous is in collision) to avoid obstacles 
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+handle} & Main mechanism to interact with the ROS system. It\textquotesingle{}s used to register the program as a node with the ROS master \\
+\hline
+{\em pos} & Vector containing the goal position for the end effector, specified in terms of x,y,z \\
+\hline
+{\em motion} & Boolean value to distinguish bewtween different simulation tests \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a8197c84abd3032cb00669567be02a797}\label{algoritmo__prevenzione__collisioni_8cpp_a8197c84abd3032cb00669567be02a797}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!print\_links\_value@{print\_links\_value}}
+\index{print\_links\_value@{print\_links\_value}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_links\_value()}{print\_links\_value()}}
+{\footnotesize\ttfamily void print\+\_\+links\+\_\+value (\begin{DoxyParamCaption}\item[{const moveit\+::core\+::\+Joint\+Model\+Group $\ast$}]{joint\+\_\+model\+\_\+group,  }\item[{moveit\+::core\+::\+Robot\+State \&}]{robot\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Function to print the name of the joints with the corrisponing angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joint\+\_\+model\+\_\+group} & Is used to keep track of the current robot pose and planning group. \\
+\hline
+{\em robot\+\_\+state} & The state of the robot for which the joints values will be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aa22275fc0348281127e4554cf54b20f8}\label{algoritmo__prevenzione__collisioni_8cpp_aa22275fc0348281127e4554cf54b20f8}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!publish@{publish}}
+\index{publish@{publish}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}}
+{\footnotesize\ttfamily void publish (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle}]{n,  }\item[{std\+::string}]{topic,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Function to publish messages to the specified topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+handle} & Main mechanism to interact with the ROS system. It\textquotesingle{}s used to register the program as a node with the ROS master \\
+\hline
+{\em topic} & Name of the topic where the message will be published \\
+\hline
+{\em num} & Number of the simulation test selected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a514ffc33d25019bd6ab8433554633074}\label{algoritmo__prevenzione__collisioni_8cpp_a514ffc33d25019bd6ab8433554633074}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!select\_num\_configurations@{select\_num\_configurations}}
+\index{select\_num\_configurations@{select\_num\_configurations}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{select\_num\_configurations()}{select\_num\_configurations()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ select\+\_\+num\+\_\+configurations (\begin{DoxyParamCaption}\item[{int}]{waypoint\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Function used to select the number of configuration. 
+
+To select the appropriate number of configuration the function uses the number of waypoints of the trajectory calculated by the planners 
+\begin{DoxyParams}{Parameters}
+{\em waypoint\+\_\+num} & The total number of waypoints (states) the trajectory consists of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns a vector with two number\+: the first is the number of configuration selected for the first partial trajectory, the second is the number of configuration to execute at the next iteration step if the trajectory is still collision free. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a9235c4a0ace90c9f9330a17e62ae128c}\label{algoritmo__prevenzione__collisioni_8cpp_a9235c4a0ace90c9f9330a17e62ae128c}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!arm\_move\_group@{arm\_move\_group}}
+\index{arm\_move\_group@{arm\_move\_group}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{arm\_move\_group}{arm\_move\_group}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface$\ast$ arm\+\_\+move\+\_\+group}
+
+
+
+pointer to the arm move group 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a3be7f66194c2acdc26a14c6210b5ba05}\label{algoritmo__prevenzione__collisioni_8cpp_a3be7f66194c2acdc26a14c6210b5ba05}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!gripper\_move\_group@{gripper\_move\_group}}
+\index{gripper\_move\_group@{gripper\_move\_group}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{gripper\_move\_group}{gripper\_move\_group}}
+{\footnotesize\ttfamily moveit\+::planning\+\_\+interface\+::\+Move\+Group\+Interface$\ast$ gripper\+\_\+move\+\_\+group}
+
+
+
+pointer to the gripper move group 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_ad7bfa43cafe8e167ff7968fab8a6d0fa}\label{algoritmo__prevenzione__collisioni_8cpp_ad7bfa43cafe8e167ff7968fab8a6d0fa}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!home\_pos\_x@{home\_pos\_x}}
+\index{home\_pos\_x@{home\_pos\_x}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{home\_pos\_x}{home\_pos\_x}}
+{\footnotesize\ttfamily const double home\+\_\+pos\+\_\+x = 0.\+5}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a1f40f8f0cb25be2f889754a10d82ecd1}\label{algoritmo__prevenzione__collisioni_8cpp_a1f40f8f0cb25be2f889754a10d82ecd1}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!home\_pos\_y@{home\_pos\_y}}
+\index{home\_pos\_y@{home\_pos\_y}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{home\_pos\_y}{home\_pos\_y}}
+{\footnotesize\ttfamily const double home\+\_\+pos\+\_\+y = 0.\+3}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aa87a83660e85a5e380010d72d4de6aeb}\label{algoritmo__prevenzione__collisioni_8cpp_aa87a83660e85a5e380010d72d4de6aeb}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!home\_pos\_z@{home\_pos\_z}}
+\index{home\_pos\_z@{home\_pos\_z}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{home\_pos\_z}{home\_pos\_z}}
+{\footnotesize\ttfamily const double home\+\_\+pos\+\_\+z = 0.\+87}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_abf4ee9401c5cf1f6b40d969c983302a6}\label{algoritmo__prevenzione__collisioni_8cpp_abf4ee9401c5cf1f6b40d969c983302a6}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!orientation\_w@{orientation\_w}}
+\index{orientation\_w@{orientation\_w}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{orientation\_w}{orientation\_w}}
+{\footnotesize\ttfamily const double orientation\+\_\+w = 0.\+0001}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_ab73db7442fe816acb7163afbffacd796}\label{algoritmo__prevenzione__collisioni_8cpp_ab73db7442fe816acb7163afbffacd796}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!orientation\_x@{orientation\_x}}
+\index{orientation\_x@{orientation\_x}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{orientation\_x}{orientation\_x}}
+{\footnotesize\ttfamily const double orientation\+\_\+x = 0.\+0}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a9d4604a1b64e201f5617d13e90867339}\label{algoritmo__prevenzione__collisioni_8cpp_a9d4604a1b64e201f5617d13e90867339}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!orientation\_y@{orientation\_y}}
+\index{orientation\_y@{orientation\_y}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{orientation\_y}{orientation\_y}}
+{\footnotesize\ttfamily const double orientation\+\_\+y = 0.\+0}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_abad9428aad916c4adb7a5c9dcd0dffc9}\label{algoritmo__prevenzione__collisioni_8cpp_abad9428aad916c4adb7a5c9dcd0dffc9}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!orientation\_z@{orientation\_z}}
+\index{orientation\_z@{orientation\_z}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{orientation\_z}{orientation\_z}}
+{\footnotesize\ttfamily const double orientation\+\_\+z = -\/1}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aadb4a5092d2de5ea3a01d642559c512a}\label{algoritmo__prevenzione__collisioni_8cpp_aadb4a5092d2de5ea3a01d642559c512a}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!PLANNER@{PLANNER}}
+\index{PLANNER@{PLANNER}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{PLANNER}{PLANNER}}
+{\footnotesize\ttfamily const std\+::string PLANNER = \char`\"{}RRTstar\char`\"{}}
+
+
+
+Name of the planner that will be used. 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}\label{algoritmo__prevenzione__collisioni_8cpp_a19cf8ea4075bbdc47c4caef4587cf045}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}}
+\index{PLANNING\_GROUP\_ARM@{PLANNING\_GROUP\_ARM}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{PLANNING\_GROUP\_ARM}{PLANNING\_GROUP\_ARM}}
+{\footnotesize\ttfamily const std\+::string PLANNING\+\_\+\+GROUP\+\_\+\+ARM = \char`\"{}manipulator\char`\"{}}
+
+
+
+Define moveit group name \mbox{[}Arm\mbox{]}. 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a40ed76b84f7fb79a07b725b43e0c73f2}\label{algoritmo__prevenzione__collisioni_8cpp_a40ed76b84f7fb79a07b725b43e0c73f2}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!PLANNING\_GROUP\_GRIPPER@{PLANNING\_GROUP\_GRIPPER}}
+\index{PLANNING\_GROUP\_GRIPPER@{PLANNING\_GROUP\_GRIPPER}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{PLANNING\_GROUP\_GRIPPER}{PLANNING\_GROUP\_GRIPPER}}
+{\footnotesize\ttfamily const std\+::string PLANNING\+\_\+\+GROUP\+\_\+\+GRIPPER = \char`\"{}endeffector\char`\"{}}
+
+
+
+Define moveit group name \mbox{[}End-\/\+Effector\mbox{]}. 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_ae1498683c0741dd54290a067e3855d16}\label{algoritmo__prevenzione__collisioni_8cpp_ae1498683c0741dd54290a067e3855d16}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!psm@{psm}}
+\index{psm@{psm}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{psm}{psm}}
+{\footnotesize\ttfamily planning\+\_\+scene\+\_\+monitor\+::\+Planning\+Scene\+Monitor\+Ptr psm}
+
+
+
+Planning Scene monitor that will create the planning scene. 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aaba0b4d344c0f4f1ff9fa2b5ca75e116}\label{algoritmo__prevenzione__collisioni_8cpp_aaba0b4d344c0f4f1ff9fa2b5ca75e116}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!robot\_accellerations@{robot\_accellerations}}
+\index{robot\_accellerations@{robot\_accellerations}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{robot\_accellerations}{robot\_accellerations}}
+{\footnotesize\ttfamily const double robot\+\_\+accellerations = 0.\+18}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a4a17daac43a74229694494db6c7cae83}\label{algoritmo__prevenzione__collisioni_8cpp_a4a17daac43a74229694494db6c7cae83}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!robot\_model\_load@{robot\_model\_load}}
+\index{robot\_model\_load@{robot\_model\_load}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{robot\_model\_load}{robot\_model\_load}}
+{\footnotesize\ttfamily robot\+\_\+model\+\_\+loader\+::\+Robot\+Model\+Loader$\ast$ robot\+\_\+model\+\_\+load}
+
+
+
+Robot\+Model\+Loader\+: \href{http://docs.ros.org/noetic/api/moveit_ros_planning/html/classrobot__model__loader_1_1RobotModelLoader.html}{\texttt{ http\+://docs.\+ros.\+org/noetic/api/moveit\+\_\+ros\+\_\+planning/html/classrobot\+\_\+\+\_\+model\+\_\+\+\_\+loader\+\_\+1\+\_\+1\+Robot\+Model\+Loader.\+html}}. 
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_af30bdcf895e64063b3d6c1bac1141ad7}\label{algoritmo__prevenzione__collisioni_8cpp_af30bdcf895e64063b3d6c1bac1141ad7}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!start\_planning\_time@{start\_planning\_time}}
+\index{start\_planning\_time@{start\_planning\_time}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_planning\_time}{start\_planning\_time}}
+{\footnotesize\ttfamily const double start\+\_\+planning\+\_\+time = 0.\+15}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_aa5c64be1d905b455d8330243e5c1804c}\label{algoritmo__prevenzione__collisioni_8cpp_aa5c64be1d905b455d8330243e5c1804c}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!test\_num@{test\_num}}
+\index{test\_num@{test\_num}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_num}{test\_num}}
+{\footnotesize\ttfamily int test\+\_\+num}
+
+\mbox{\Hypertarget{algoritmo__prevenzione__collisioni_8cpp_a628d801d093e5d9b41ecaa82592ee92d}\label{algoritmo__prevenzione__collisioni_8cpp_a628d801d093e5d9b41ecaa82592ee92d}} 
+\index{algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}!tolerance@{tolerance}}
+\index{tolerance@{tolerance}!algoritmo\_prevenzione\_collisioni.cpp@{algoritmo\_prevenzione\_collisioni.cpp}}
+\doxysubsubsection{\texorpdfstring{tolerance}{tolerance}}
+{\footnotesize\ttfamily const double tolerance = 0.\+05}
+
+
+
+Goal pose tolerance. 
+
