@@ -81,7 +81,7 @@ Lasciandone **SOLO UNA** scommentata.
 <br/>
 <br/>
 
-- A questo punto di possono aprire due finestre del terminale ed eseguire nella prima 
+- A questo punto si possono aprire due finestre del terminale ed eseguire nella prima 
 
 ```
 roslaunch ur5e_gripper_moveit_config ur5e_gazebo.launch
