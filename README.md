@@ -16,31 +16,30 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 
 - Per lo sviluppo del codice è stato utilizzato **Ubuntu 20.04.02** con **ROS Noetic**.
 
-- Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
+1. Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
-- Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire dopo: 
+2.Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire il comando: 
 
+```
+catkin_make    
+```
+dopo il comando:
 ```
  catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
-
-Il comando :
-
-> catkin_make    
-
 INVECE DI  <catkin build>
 
 
 
+3. Una volta creato e compilato il workspace il prossimo step è da svolgere non da terminale ed è quello di copiare le 3 cartelle (soft_robotics, collision_avoidance e fmauch_universal_robot) presenti nella cartella ROS_packeges situata in Thesis_files e incollarle all'interno della cartella src presente nel workspace creato. ATTENZIONE A COPIARE LE SINGOLE CARTELLE E NON L'INTERA CARTELLA CHIAMATA ROS_packages.
 
-Una volta creato e compilato il workspace il prossimo step è da svolgere non da terminale ed è quello di copiare le 3 cartelle (soft_robotics, collision_avoidance e fmauch_universal_robot) presenti nella cartella ROS_packeges situata in Thesis_files e incollarle all'interno della cartella src presente nel workspace creato. ATTENZIONE A COPIARE LE SINGOLE CARTELLE E NON L'INTERA CARTELLA CHIAMATA ROS_packages.
-
-per controllare se tutto è configurato in maniera corretta:
-
-> cd ~/catkin_ws/src
-
-> ls 
-
+- per controllare se tutto è configurato in maniera corretta:
+  
+```
+cd ~/catkin_ws/src
+ls 
+```
+ 
 dovrebbe dare il seguente output:
 
 CMakeLists.txt          moveit            moveit_visual_tools  srdfdom
@@ -50,10 +49,11 @@ geometric_shapes        moveit_tutorials  soft_robotics
  
 
 
-A questo punto si può concludere compilando nuovamente con 
-
-> catkin_make
+- A questo punto si può concludere compilando nuovamente con 
  
+```
+catkin_make
+```
 
 Potrebbe essere necessaria l'installazione di ulteriori pacchetti da installare eseguendo in cd ~/catkin_ws/ il comando:
 
