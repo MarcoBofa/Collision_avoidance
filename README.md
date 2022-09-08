@@ -73,7 +73,7 @@ Nel caso di errori di compilazione spegnere il computer (o macchina virtuale) e 
 
 4. Una volta compilato tutto è possibile riprodurre le simulazioni. 
 
-- Sono presenti 3 Test, per cambiare il tipo di test da eseguire bisogna andare nel pacchetto
+- Sono presenti 3 Test, per cambiare il tipo di test da eseguire aprire [collision_av.launch](https://github.com/MarcoBofa/Collision_avoidance/tree/main/ROS_packages/collision_avoidance/src/launch) che si trova in
 > collision_avoidance -> src -> launch -> collision_av.launch
 
 commentare e scommentare la simulazione che si vuole eseguire.
