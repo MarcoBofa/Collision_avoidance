@@ -101,6 +101,7 @@ Se dovesse succedere che il programma dia errori o si blocchi (non dovrebbe ma c
 # Video delle simulazioni
 
 1. Test
+
 https://user-images.githubusercontent.com/105377367/189079141-f1dba080-631e-4654-8ff3-42026f1dbae8.mov
 
 2. Test
