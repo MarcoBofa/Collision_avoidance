@@ -95,4 +95,8 @@ Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di 
 <br/>
 <br/>
 
+https://user-images.githubusercontent.com/105377367/189079141-f1dba080-631e-4654-8ff3-42026f1dbae8.mov
+
+
+
 Se dovesse succedere che il programma dia errori o si blocchi (non dovrebbe ma con tutti i requisiti di installazione necessari non si sa mai) usare Ctrl^c per fermare la simulazione e riavviarla con i comandi mostrati.
