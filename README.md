@@ -73,9 +73,13 @@ Nel caso di errori di compilazione spegnere il computer (o macchina virtuale) e 
 
 4. Una volta compilato tutto è possibile riprodurre le simulazioni. 
 
-- Sono presenti 3 Test, per cambiare il tipo di test da eseguire bisogna andare nel pacchetto collision_avoidance -> src -> launch -> collision_av.launch,  commentare e scommentare la simulazione che si vuole eseguire.
-Lasciandone SOLO UNA scommentata.
+- Sono presenti 3 Test, per cambiare il tipo di test da eseguire bisogna andare nel pacchetto
+> collision_avoidance -> src -> launch -> collision_av.launch
 
+commentare e scommentare la simulazione che si vuole eseguire.
+Lasciandone **SOLO UNA** scommentata.
+<br/>
+<br/>
 
 - A questo punto di possono aprire due finestre del terminale ed eseguire nella prima 
 
