@@ -43,11 +43,9 @@ INVECE DI  **catkin build**
 cd ~/catkin_ws/src
 ls 
 ```
- <br/>
 dovrebbe dare il seguente output:
-
+<br/>
 <img width="647" alt="Schermata 2022-09-08 alle 10 49 45" src="https://user-images.githubusercontent.com/105377367/189078871-f4bf9833-2c92-44b1-8578-252b6dbdb0e3.png">
-
 <br/>
 
 - A questo punto si può concludere compilando nuovamente con 
