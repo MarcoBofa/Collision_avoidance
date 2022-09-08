@@ -1,5 +1,5 @@
 # Collision_avoidance
-Algorithm for dynamic collision avoidance using Probabilistic RoadMaps and Rapidly-Exploring Random Trees
+Algoritmo per la prevenzione dinamica della collisioni con l'utilizzo di Probabilistic RoadMaps e Rapidly-Exploring Random Trees
 
 <br/>
 <br/>
@@ -46,11 +46,7 @@ ls
  <br/>
 dovrebbe dare il seguente output:
 
-CMakeLists.txt          moveit            moveit_visual_tools  srdfdom
-collision_avoidance     moveit_msgs       panda_moveit_config
-fmauch_universal_robot  moveit_resources  rviz_visual_tools
-geometric_shapes        moveit_tutorials  soft_robotics
- 
+<img width="647" alt="Schermata 2022-09-08 alle 10 49 45" src="https://user-images.githubusercontent.com/105377367/189078871-f4bf9833-2c92-44b1-8578-252b6dbdb0e3.png">
 
 <br/>
 
