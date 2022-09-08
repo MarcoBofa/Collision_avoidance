@@ -6,7 +6,7 @@ Algoritmo per la prevenzione dinamica della collisioni con l'utilizzo di Probabi
 
 ## Documentazione
 
-Il codice è stato documentato utilizzando doxygen. La documentazione è consultabile aprendo il file **index.html** che si trova in:
+Il codice è stato documentato utilizzando doxygen. La documentazione è consultabile aprendo il file **index.html** [doc](https://github.com/MarcoBofa/Collision_avoidance/tree/main/ROS_packages/collision_avoidance/doxygen_doc/html) che si trova in :
 
 > collision_avoidance -> doxygen_doc -> html -> doc -> index.html
 
