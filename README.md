@@ -17,7 +17,7 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 ## Istruzioni per l'installazione e utilizzo del codice
 
 - Per lo sviluppo del codice è stato utilizzato **Ubuntu 20.04.02** con **ROS Noetic**.
-- <br/>
+<br/>
 
 1. Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
