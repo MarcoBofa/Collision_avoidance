@@ -35,7 +35,7 @@ INVECE DI  **catkin build**
 <br/>
 
 
-3. Una volta creato e compilato il workspace il prossimo step è da svolgere non da terminale ed è quello di copiare le 3 cartelle (soft_robotics, collision_avoidance e fmauch_universal_robot) presenti nella cartella ROS_packeges situata in Thesis_files e incollarle all'interno della cartella src presente nel workspace creato. ATTENZIONE A COPIARE LE SINGOLE CARTELLE E NON L'INTERA CARTELLA CHIAMATA ROS_packages.
+3. Una volta creato e compilato il workspace il prossimo step è da svolgere è quello di copiare le 3 cartelle (soft_robotics, collision_avoidance e fmauch_universal_robot) presenti nella cartella ROS_packeges incollarle all'interno della cartella src presente nel workspace creato. ATTENZIONE A COPIARE LE SINGOLE CARTELLE E NON L'INTERA CARTELLA CHIAMATA ROS_packages.
 
 - per controllare se tutto è configurato in maniera corretta:
   
