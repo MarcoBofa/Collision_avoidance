@@ -6,7 +6,7 @@ Algorithm for dynamic collision avoidance using Probabilistic RoadMaps and Rapid
 
 Il codice è stato documentato utilizzando doxygen. La documentazione è consultabile aprendo il file **index.html** che si trova in:
 
-- collision_avoidance -> doxygen_doc -> html -> doc -> index.html
+> collision_avoidance -> doxygen_doc -> html -> doc -> index.html
 
 
 
@@ -20,7 +20,9 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 
 - Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire dopo: 
 
-$ catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
+ catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
 
 Il comando :
 
