@@ -2,7 +2,7 @@
 Algorithm for dynamic collision avoidance using Probabilistic RoadMaps and Rapidly-Exploring Random Trees
 
 
-## DOCUMENTAZIONE
+## Documentazione
 
 Il codice è stato documentato utilizzando doxygen. La documentazione è consultabile aprendo il file **index.html** che si trova in:
 
@@ -12,15 +12,15 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 
 
 
-## ISTRUZIONI PER L'INSTALLAZIONE E UTILIZZO DEL CODICE
+## Istruzioni per l'installazione e utilizzo del codice
 
 - Per lo sviluppo del codice è stato utilizzato **Ubuntu 20.04.02** con **ROS Noetic**.
 
-Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
+- Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
-- Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html FACENDO ATTENZIONE PER0' al passaggio finale di configurazione di eseguire dopo: 
+- Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire dopo: 
 
-> catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
+$ catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 Il comando :
 
