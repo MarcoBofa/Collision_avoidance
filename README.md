@@ -95,8 +95,20 @@ Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di 
 <br/>
 <br/>
 
-https://user-images.githubusercontent.com/105377367/189079141-f1dba080-631e-4654-8ff3-42026f1dbae8.mov
-
-
 
 Se dovesse succedere che il programma dia errori o si blocchi (non dovrebbe ma con tutti i requisiti di installazione necessari non si sa mai) usare Ctrl^c per fermare la simulazione e riavviarla con i comandi mostrati.
+
+# Video delle simulazioni
+
+1. Test
+https://user-images.githubusercontent.com/105377367/189079141-f1dba080-631e-4654-8ff3-42026f1dbae8.mov
+
+2. Test
+
+https://user-images.githubusercontent.com/105377367/189083979-6998fa7c-f45e-41ce-b6d2-5a3e3a14e766.mov
+
+3. Test
+
+https://user-images.githubusercontent.com/105377367/189084461-ac8a9e3f-e725-4275-9851-b6a004afbfdf.mov
+
+
