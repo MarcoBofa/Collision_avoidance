@@ -1,0 +1,18 @@
+<launch>
+  
+  <node name="algoritmo_prevenzione_collisioni" pkg="collision_avoidance" type="algoritmo_prevenzione_collisioni" output="screen"/>
+
+
+  <!-- UNCOMMENT TO START FIRST (vertical obstacle) SIMULATION -->
+  <!-- <node name="move_obstacle_case1" pkg="collision_avoidance" type="move_obstacle_case1" output="screen"/> -->
+
+  <!-- UNCOMMENT TO START SECOND (orizontal obstacle) SIMULATION -->
+  <node name="move_obstacle_case2" pkg="collision_avoidance" type="move_obstacle_case2" output="screen"/>
+
+  <!-- UNCOMMENT TO START THIRD (person obstacle) SIMULATION -->
+  <!-- <node name="move_obstacle_case3" pkg="collision_avoidance" type="move_obstacle_case3" output="screen"/> -->
+
+
+
+
+</launch>
