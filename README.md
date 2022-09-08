@@ -18,7 +18,7 @@ Il codice è stato documentato utilizzando doxygen. La documentazione è consult
 
 1. Se ROS non è già installato seguire la procedura descritta nel dettaglio in [Ros Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
-2.Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire il comando: 
+2. Una volta installato ROS noetic si procede l'Installazione di MoveIt seguendo il tutorial mostrato in  [MoveIt Installation](https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html) **FACENDO ATTENZIONE PER0'** al passaggio finale di configurazione di eseguire il comando: 
 
 ```
 catkin_make    
@@ -27,7 +27,7 @@ dopo il comando:
 ```
  catkin config --extend /opt/ros/${ROS_DISTRO} --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
-INVECE DI  <catkin build>
+INVECE DI  **catkin build**
 
 
 
@@ -55,10 +55,10 @@ geometric_shapes        moveit_tutorials  soft_robotics
 catkin_make
 ```
 
-Potrebbe essere necessaria l'installazione di ulteriori pacchetti da installare eseguendo in cd ~/catkin_ws/ il comando:
-
-> rosdep install --from-paths src --ignore-src -r -y
-
+- Potrebbe essere necessaria l'installazione di ulteriori pacchetti da installare eseguendo in cd ~/catkin_ws/ il comando:
+```
+rosdep install --from-paths src --ignore-src -r -y
+```
 
 Nel caso di errori di compilazione spegnere il computer (o macchina virtuale) e riprovare.
 
@@ -66,24 +66,26 @@ Nel caso di errori di compilazione spegnere il computer (o macchina virtuale) e 
 
 
 
-Una volta compilato tutto è possibile riprodurre le simulazioni. 
+4. Una volta compilato tutto è possibile riprodurre le simulazioni. 
 
-Sono presenti 3 Test, per cambiare il tipo di test da eseguire bisogna andare nel pacchetto collision_avoidance -> src -> launch -> collision_av.launch,  commentare e scommentare la simulazione che si vuole eseguire.
+- Sono presenti 3 Test, per cambiare il tipo di test da eseguire bisogna andare nel pacchetto collision_avoidance -> src -> launch -> collision_av.launch,  commentare e scommentare la simulazione che si vuole eseguire.
 Lasciandone SOLO UNA scommentata.
 
 
-A questo punto di possono aprire due finestre del terminale ed eseguire nella prima 
+- A questo punto di possono aprire due finestre del terminale ed eseguire nella prima 
 
->  roslaunch ur5e_gripper_moveit_config ur5e_gazebo.launch
+```
+roslaunch ur5e_gripper_moveit_config ur5e_gazebo.launch
+```
 
 Che avvia gazebo ( nel quale purtroppo sarà presente solo il robot perchè i modelli (tavolo, ostacoli etc.) vengono salvati in locale in .gazebo, anche se rappresenta solo un aspetto di visualizzazione visto che i controlli delle collisioni e degli ostacoli avvengono su Rviz). 
 Viene avviato inoltre Rviz in cui dovrebbe subito dopo comparire il tavolo di laboratorio, mentre il robot dovrebbe iniziare il movimento verso la posizione di "riposo".
 
 
-
-Nella seconda finestra eseguire il comando:
-
->  roslaunch collision_avoidance collion_av.launch
+- Nella seconda finestra eseguire il comando:
+```
+roslaunch collision_avoidance collion_av.launch
+```
 
 Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di test selezionato (quello scommentato come descritto nella parte precedente), inserito il numero la simulazione comincerà e il robot inizierà a muoversi. 
 
