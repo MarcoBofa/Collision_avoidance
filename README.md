@@ -60,7 +60,7 @@ dovrebbe dare il seguente output:
 catkin_make
 ```
 
-- Potrebbe essere necessaria l'installazione di ulteriori pacchetti da installare eseguendo in cd ~/catkin_ws/ il comando:
+- Potrebbe essere necessaria l'installazione di ulteriori pacchetti da installare eseguendo nella cartella di base del workspace il comando:
 ```
 rosdep install --from-paths src --ignore-src -r -y
 ```
