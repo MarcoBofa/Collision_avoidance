@@ -46,7 +46,7 @@ presenti nella cartella ROS_packeges situata e incollarle all'interno della cart
 - per controllare se tutto è configurato in maniera corretta:
   
 ```
-cd ~/catkin_ws/src
+cd ~/<ws_name>/src
 ls 
 ```
 dovrebbe dare il seguente output:
