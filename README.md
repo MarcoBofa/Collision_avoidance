@@ -94,10 +94,10 @@ Viene avviato inoltre Rviz in cui dovrebbe subito dopo comparire il tavolo di la
 
 - Nella seconda finestra eseguire il comando:
 ```
-roslaunch collision_avoidance collion_av.launch
+roslaunch collision_avoidance collision_av.launch
 ```
 
-Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di test selezionato (quello scommentato come descritto nella parte precedente), inserito il numero la simulazione comincerà e il robot inizierà a muoversi. 
+Per prima cosa verrà richiesto a terminale all'utente di inserire il numero di test selezionato (quello scommentato come descritto nella parte precedente), inserito il numero la simulazione comincerà e il robot inizierà a muoversi. Terminata la simulazione è possibile rilanciare nuovamente il secondo comando.
 <br/>
 <br/>
 
