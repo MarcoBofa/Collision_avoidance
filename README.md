@@ -1,5 +1,5 @@
 # Collision_avoidance
-Algoritmo per la prevenzione dinamica della collisioni con l'utilizzo di Probabilistic RoadMaps e Rapidly-Exploring Random Trees
+Prima implementazione base per un algoritmo per la prevenzione dinamica della collisioni con l'utilizzo di Probabilistic RoadMaps e Rapidly-Exploring Random Trees
 
 <br/>
 <br/>
@@ -110,11 +110,8 @@ Se dovesse succedere che il programma dia errori o si blocchi (non dovrebbe ma c
 
 https://user-images.githubusercontent.com/105377367/189079141-f1dba080-631e-4654-8ff3-42026f1dbae8.mov
 
+
 2. Test
-
-https://user-images.githubusercontent.com/105377367/189083979-6998fa7c-f45e-41ce-b6d2-5a3e3a14e766.mov
-
-3. Test
 
 https://user-images.githubusercontent.com/105377367/189084461-ac8a9e3f-e725-4275-9851-b6a004afbfdf.mov
 
